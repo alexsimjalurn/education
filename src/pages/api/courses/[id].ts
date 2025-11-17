@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import type { Course, UpdateCourseData } from '@/features/courses/types';
 import {
   createApiHandler,
   logRequest,
@@ -13,7 +14,6 @@ import {
 } from '@/lib/api/types';
 import { validateCreateCourseRequest } from '@/lib/api/validation';
 
-import type { Course, UpdateCourseData } from '@/features/courses/types';
 
 /**
  * Course by ID API Route

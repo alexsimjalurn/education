@@ -28,7 +28,7 @@ export class AppError extends Error {
       code: this.code,
       message: this.message,
       status: this.status,
-      ...(this.details && { details: this.details }),
+      ...(this.details ? { details: this.details } : {}),
     };
   }
 }
@@ -106,7 +106,7 @@ export const logError = (
     code: appError.code,
     message: appError.message,
     status: appError.status,
-    ...(appError.details && { details: appError.details }),
+    ...(appError.details ? { details: appError.details } : {}),
     ...context,
   };
 

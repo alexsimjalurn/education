@@ -3,18 +3,19 @@
  */
 
 import { render } from '@testing-library/react'
-import { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
+
 import { ErrorBoundary } from '@/components/errors/ErrorBoundary'
+
+const TestWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
+  <ErrorBoundary>{children}</ErrorBoundary>
+)
 
 /**
  * Custom render function with providers
  */
 export const renderWithProviders = (ui: ReactElement) => {
-  return render(ui, {
-    wrapper: ({ children }) => (
-      <ErrorBoundary>{children}</ErrorBoundary>
-    ),
-  })
+  return render(ui, { wrapper: TestWrapper })
 }
 
 /**
@@ -29,7 +30,7 @@ export const testUtils = {
   /**
    * Mock API response
    */
-  mockApiResponse: <T>(data: T, delay = 0) => {
+  mockApiResponse: <T,>(data: T, delay = 0) => {
     return new Promise<T>((resolve) => {
       setTimeout(() => resolve(data), delay)
     })

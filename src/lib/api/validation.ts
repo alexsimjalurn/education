@@ -20,7 +20,7 @@ export const validateLoginRequest = (data: unknown): {
 
   const { email, password } = data as Record<string, unknown>;
 
-  if (!validateRequired(email) || typeof email !== 'string') {
+  if (typeof email !== 'string' || !validateRequired(email)) {
     throw new ValidationError('Email is required');
   }
 
@@ -28,7 +28,7 @@ export const validateLoginRequest = (data: unknown): {
     throw new ValidationError('Invalid email format');
   }
 
-  if (!validateRequired(password) || typeof password !== 'string') {
+  if (typeof password !== 'string' || !validateRequired(password)) {
     throw new ValidationError('Password is required');
   }
 
@@ -50,11 +50,11 @@ export const validateRegisterRequest = (data: unknown): {
 
   const { name, email, password, role } = data as Record<string, unknown>;
 
-  if (!validateRequired(name) || typeof name !== 'string') {
+  if (typeof name !== 'string' || !validateRequired(name)) {
     throw new ValidationError('Name is required');
   }
 
-  if (!validateRequired(email) || typeof email !== 'string') {
+  if (typeof email !== 'string' || !validateRequired(email)) {
     throw new ValidationError('Email is required');
   }
 
@@ -62,7 +62,7 @@ export const validateRegisterRequest = (data: unknown): {
     throw new ValidationError('Invalid email format');
   }
 
-  if (!validateRequired(password) || typeof password !== 'string') {
+  if (typeof password !== 'string' || !validateRequired(password)) {
     throw new ValidationError('Password is required');
   }
 
@@ -113,15 +113,15 @@ export const validateCreateCourseRequest = (data: unknown): {
     thumbnail,
   } = data as Record<string, unknown>;
 
-  if (!validateRequired(title) || typeof title !== 'string') {
+  if (typeof title !== 'string' || !validateRequired(title)) {
     throw new ValidationError('Title is required');
   }
 
-  if (!validateRequired(description) || typeof description !== 'string') {
+  if (typeof description !== 'string' || !validateRequired(description)) {
     throw new ValidationError('Description is required');
   }
 
-  if (!validateRequired(instructor) || typeof instructor !== 'string') {
+  if (typeof instructor !== 'string' || !validateRequired(instructor)) {
     throw new ValidationError('Instructor is required');
   }
 
@@ -142,7 +142,7 @@ export const validateCreateCourseRequest = (data: unknown): {
     );
   }
 
-  if (!validateRequired(category) || typeof category !== 'string') {
+  if (typeof category !== 'string' || !validateRequired(category)) {
     throw new ValidationError('Category is required');
   }
 
@@ -158,7 +158,7 @@ export const validateCreateCourseRequest = (data: unknown): {
     price,
     level,
     category,
-    thumbnail,
+    thumbnail: typeof thumbnail === 'string' ? thumbnail : undefined,
   };
 };
 
@@ -188,19 +188,19 @@ export const validateCreateLessonRequest = (data: unknown): {
     order,
   } = data as Record<string, unknown>;
 
-  if (!validateRequired(courseId) || typeof courseId !== 'string') {
+  if (typeof courseId !== 'string' || !validateRequired(courseId)) {
     throw new ValidationError('Course ID is required');
   }
 
-  if (!validateRequired(title) || typeof title !== 'string') {
+  if (typeof title !== 'string' || !validateRequired(title)) {
     throw new ValidationError('Title is required');
   }
 
-  if (!validateRequired(description) || typeof description !== 'string') {
+  if (typeof description !== 'string' || !validateRequired(description)) {
     throw new ValidationError('Description is required');
   }
 
-  if (!validateRequired(content) || typeof content !== 'string') {
+  if (typeof content !== 'string' || !validateRequired(content)) {
     throw new ValidationError('Content is required');
   }
 
@@ -221,7 +221,7 @@ export const validateCreateLessonRequest = (data: unknown): {
     title,
     description,
     content,
-    videoUrl,
+    videoUrl: typeof videoUrl === 'string' ? videoUrl : undefined,
     duration,
     order,
   };

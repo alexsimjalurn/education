@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { CourseCard } from './CourseCard';
 import type { Course } from '../types';
+
+import { CourseCard } from './CourseCard';
 
 /**
  * CourseCard Component Tests

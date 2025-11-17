@@ -39,7 +39,7 @@ export const initAnalytics = (): void => {
 /**
  * Track page view
  */
-export const trackPageView = (url: string): void => {
+export const trackPageView = (_url: string): void => {
   if (
     process.env.NODE_ENV === 'production' &&
     process.env.NEXT_PUBLIC_GA_ID &&
@@ -58,10 +58,10 @@ export const trackPageView = (url: string): void => {
  * Track event
  */
 export const trackEvent = (
-  action: string,
-  category: string,
-  label?: string,
-  value?: number
+  _action: string,
+  _category: string,
+  _label?: string,
+  _value?: number
 ): void => {
   if (
     process.env.NODE_ENV === 'production' &&

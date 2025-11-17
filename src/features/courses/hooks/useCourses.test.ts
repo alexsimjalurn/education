@@ -1,6 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
 import { courseService } from '../services';
+
 import { useCourses } from './useCourses';
 
 // Mock the course service

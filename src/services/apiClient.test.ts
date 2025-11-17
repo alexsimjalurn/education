@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-import { ApiError } from '@/lib/errors';
-
-import { apiClient } from './apiClient';
-
 // Mock axios
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -94,7 +90,7 @@ describe('apiClient', () => {
 
     // Re-import to trigger constructor
     jest.resetModules();
-    const { apiClient: newApiClient } = require('./apiClient');
+    const { apiClient: newApiClient } = await import('./apiClient');
 
     await newApiClient.get('/test');
 
@@ -117,7 +113,7 @@ describe('apiClient', () => {
     mockedAxios.create.mockReturnValue(mockAxiosInstance);
 
     jest.resetModules();
-    const { apiClient: newApiClient } = require('./apiClient');
+    const { apiClient: newApiClient } = await import('./apiClient');
 
     const response = await newApiClient.get<{ id: string; name: string }>(
       '/test'
@@ -143,7 +139,7 @@ describe('apiClient', () => {
     mockedAxios.create.mockReturnValue(mockAxiosInstance);
 
     jest.resetModules();
-    const { apiClient: newApiClient } = require('./apiClient');
+    const { apiClient: newApiClient } = await import('./apiClient');
 
     const requestData = { name: 'Test' };
     const response = await newApiClient.post<{ id: string }, typeof requestData>(
@@ -187,7 +183,7 @@ describe('apiClient', () => {
     mockedAxios.create.mockReturnValue(mockAxiosInstance);
 
     jest.resetModules();
-    const { apiClient: newApiClient } = require('./apiClient');
+    const { apiClient: newApiClient } = await import('./apiClient');
 
     await expect(newApiClient.get('/test')).rejects.toThrow();
   });

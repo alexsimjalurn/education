@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import type { Lesson } from '@/features/lessons/types';
 import {
   createApiHandler,
   logRequest,
@@ -12,7 +13,6 @@ import {
 } from '@/lib/api/types';
 import { validateCreateLessonRequest } from '@/lib/api/validation';
 
-import type { Lesson } from '@/features/lessons/types';
 
 /**
  * Lessons API Route
@@ -25,8 +25,6 @@ const getHandler = async (
   res: NextApiResponse<ApiResponse<Lesson[]>>
 ): Promise<void> => {
   logRequest(req, { courseId: req.query.courseId });
-
-  const { courseId } = req.query;
 
   // TODO: Implement actual database query
   // In production: fetch lessons from database, filter by courseId if provided

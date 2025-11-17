@@ -28,8 +28,8 @@ export const initSentry = (): void => {
  * Capture exception to Sentry
  */
 export const captureException = (
-  error: Error,
-  context?: Record<string, unknown>
+  _error: Error,
+  _context?: Record<string, unknown>
 ): void => {
   if (process.env.NODE_ENV === 'production') {
     // TODO: Send to Sentry when integrated
@@ -45,9 +45,9 @@ export const captureException = (
  * Capture message to Sentry
  */
 export const captureMessage = (
-  message: string,
-  level: 'info' | 'warning' | 'error' = 'info',
-  context?: Record<string, unknown>
+  _message: string,
+  _level: 'info' | 'warning' | 'error' = 'info',
+  _context?: Record<string, unknown>
 ): void => {
   if (process.env.NODE_ENV === 'production') {
     // TODO: Send to Sentry when integrated

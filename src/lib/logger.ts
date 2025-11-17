@@ -43,14 +43,14 @@ class Logger {
         console.warn('[WARN]', logEntry);
         // In production, send warnings to Sentry
         if (!this.isDevelopment) {
-          this.sendToSentry('warning', message, context);
+          this.sendToSentry({ level: 'warning', message, ...context });
         }
         break;
       case 'error':
         console.error('[ERROR]', logEntry);
         // In production, send errors to Sentry
         if (!this.isDevelopment) {
-          this.sendToSentry('error', message, context);
+          this.sendToSentry({ level: 'error', message, ...context });
         }
         break;
     }
@@ -59,11 +59,10 @@ class Logger {
   /**
    * Send log to Sentry (production only)
    */
-  private sendToSentry(
-    level: 'warning' | 'error',
-    message: string,
-    context?: LogContext
-  ): void {
+  private sendToSentry(context?: LogContext): void {
+    if (!context) {
+      return;
+    }
     // TODO: Initialize Sentry when package is installed
     // if (typeof window !== 'undefined' && window.Sentry) {
     //   if (level === 'error') {

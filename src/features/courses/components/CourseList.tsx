@@ -1,8 +1,10 @@
 'use client'
 
-import { useCourses } from '../hooks/useCourses'
-import { CourseCard } from './CourseCard'
 import { Spinner } from '@/components/ui/Spinner'
+
+import { useCourses } from '../hooks/useCourses'
+
+import { CourseCard } from './CourseCard'
 
 export const CourseList = () => {
   const { courses, isLoading, error } = useCourses()

@@ -1,8 +1,10 @@
 'use client'
 
-import { useLessons } from '../hooks/useLessons'
-import { LessonCard } from './LessonCard'
 import { Spinner } from '@/components/ui/Spinner'
+
+import { useLessons } from '../hooks/useLessons'
+
+import { LessonCard } from './LessonCard'
 
 interface LessonListProps {
   courseId?: string

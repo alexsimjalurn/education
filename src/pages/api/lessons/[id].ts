@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import type { Lesson, UpdateLessonData } from '@/features/lessons/types';
 import {
   createApiHandler,
   logRequest,
@@ -13,7 +14,6 @@ import {
 } from '@/lib/api/types';
 import { validateCreateLessonRequest } from '@/lib/api/validation';
 
-import type { Lesson, UpdateLessonData } from '@/features/lessons/types';
 
 /**
  * Lesson by ID API Route

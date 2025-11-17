@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import type { AuthResponse } from '@/features/auth/types';
 import { createApiHandler, logRequest, requireBody } from '@/lib/api/middleware';
 import {
   createErrorResponse,
@@ -8,7 +9,6 @@ import {
 } from '@/lib/api/types';
 import { validateLoginRequest } from '@/lib/api/validation';
 
-import type { AuthResponse } from '@/features/auth/types';
 
 /**
  * Login API Route

@@ -1,13 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { createApiHandler, logRequest, requireAuth } from '@/lib/api/middleware';
-import {
-  createErrorResponse,
-  createSuccessResponse,
-  type ApiResponse,
-} from '@/lib/api/types';
-
 import type { User } from '@/features/auth/types';
+import { createApiHandler, logRequest, requireAuth } from '@/lib/api/middleware';
+import { createSuccessResponse, type ApiResponse } from '@/lib/api/types';
+
 
 /**
  * Get Current User API Route

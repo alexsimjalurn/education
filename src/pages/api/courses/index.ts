@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import type { Course } from '@/features/courses/types';
 import { createApiHandler, logRequest, requireAuth, requireBody } from '@/lib/api/middleware';
 import {
   createSuccessResponse,
@@ -8,7 +9,6 @@ import {
 } from '@/lib/api/types';
 import { validateCreateCourseRequest } from '@/lib/api/validation';
 
-import type { Course } from '@/features/courses/types';
 
 /**
  * Courses API Route

@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
 import {
   ArrowLeft,
   Paperclip,
@@ -14,6 +12,8 @@ import {
   Bookmark,
   Sparkles,
 } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const quickActions = [
   { label: 'ແນບ', Icon: Paperclip },

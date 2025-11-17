@@ -1,14 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import type { AuthResponse } from '@/features/auth/types';
 import { createApiHandler, logRequest, requireBody } from '@/lib/api/middleware';
-import {
-  createErrorResponse,
-  createSuccessResponse,
-  type ApiResponse,
-} from '@/lib/api/types';
+import { createSuccessResponse, type ApiResponse } from '@/lib/api/types';
 import { validateRegisterRequest } from '@/lib/api/validation';
 
-import type { AuthResponse } from '@/features/auth/types';
 
 /**
  * Register API Route
@@ -25,7 +21,7 @@ const handler = async (
   requireBody(req);
 
   // Validate input
-  const { email, password, name, role } = validateRegisterRequest(req.body);
+  const { email, name, role } = validateRegisterRequest(req.body);
 
   // TODO: Implement actual registration logic
   // This is a placeholder
@@ -37,7 +33,7 @@ const handler = async (
       id: Date.now().toString(),
       email,
       name,
-      role,
+      role: (role ?? 'student') as 'student' | 'teacher' | 'admin',
       createdAt: new Date().toISOString(),
     },
     token: 'mock-jwt-token',

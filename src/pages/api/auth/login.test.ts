@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { createErrorResponse, createSuccessResponse } from '@/lib/api/types';
 import { validateLoginRequest } from '@/lib/api/validation';
 
 import handler from './login';

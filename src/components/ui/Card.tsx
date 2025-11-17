@@ -13,7 +13,7 @@ import React from 'react';
  * </Card>
  * ```
  */
-export interface CardProps {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Card content
    */
@@ -37,9 +37,10 @@ export const Card: React.FC<CardProps> = ({
   className = '',
   title,
   footer,
+  ...rest
 }) => {
   return (
-    <div className={`bg-white rounded-lg shadow-md ${className}`}>
+    <div className={`bg-white rounded-lg shadow-md ${className}`} {...rest}>
       {title && (
         <div className="px-6 py-4 border-b border-gray-200">
           <h3 className="text-lg font-semibold">{title}</h3>
