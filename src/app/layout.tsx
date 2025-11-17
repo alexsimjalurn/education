@@ -24,18 +24,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="lo" className={notoSansLao.variable}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>
         <ErrorBoundaryWrapper>{children}</ErrorBoundaryWrapper>
         <FloatingChatButton />
