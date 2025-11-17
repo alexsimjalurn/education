@@ -75,8 +75,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Noto Sans Lao', 'system-ui', 'sans-serif'],
-        heading: ['Phetsarath', 'Noto Sans Lao', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-noto-sans-lao)', 'Noto Sans Lao', 'system-ui', 'sans-serif'],
+        heading: ['Phetsarath', 'var(--font-noto-sans-lao)', 'Noto Sans Lao', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
       },
       spacing: {

@@ -1,8 +1,16 @@
 import type { Metadata } from 'next';
+import { Noto_Sans_Lao } from 'next/font/google';
 
 import { ErrorBoundaryWrapper } from '@/components/errors/ErrorBoundaryWrapper';
 import { FloatingChatButton } from '@/components/ui/FloatingChatButton';
 import '../styles/globals.css';
+
+const notoSansLao = Noto_Sans_Lao({
+  subsets: ['lao'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-noto-sans-lao',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Education Web App',
@@ -15,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="lo">
+    <html lang="lo" className={notoSansLao.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -24,7 +32,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&family=Phetsarath:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </head>

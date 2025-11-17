@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -45,11 +46,15 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   return (
     <Card className="hover:shadow-lg transition-shadow">
       {course.thumbnail && (
-        <img
-          src={course.thumbnail}
-          alt={course.title}
-          className="w-full h-48 object-cover rounded-t-lg"
-        />
+        <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+          <Image
+            src={course.thumbnail}
+            alt={course.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
       )}
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
