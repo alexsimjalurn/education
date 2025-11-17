@@ -2,6 +2,9 @@ import Image from 'next/image';
 
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { Button } from '@/components/ui/Button';
+
+const featuredImage = '/images/gallery/featured.jpg';
 
 const galleryItems = [
   '/images/gallery/photo-01.jpg',
@@ -14,6 +17,8 @@ const galleryItems = [
   '/images/gallery/photo-08.jpg',
   '/images/gallery/photo-09.jpg',
   '/images/gallery/photo-10.jpg',
+  '/images/gallery/photo-11.jpg',
+  '/images/gallery/photo-12.jpg',
 ];
 
 export default function GalleryPage() {
@@ -29,10 +34,21 @@ export default function GalleryPage() {
           </div>
 
           <div className="container relative z-10">
+            <div className="mb-10 overflow-hidden shadow-xl border border-white/50">
+              <Image
+                src={featuredImage}
+                alt="Featured gallery"
+                width={1600}
+                height={900}
+                className="w-full h-[360px] sm:h-[420px] lg:h-[480px] object-cover"
+                priority
+              />
+            </div>
+
             <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-gray-900 mb-3">ຮູບພາບ</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-3 font-sans">ຮູບພາບ</h1>
               <p className="text-gray-700">
-                ຮວບຮວມຮູບພາບການຮ່ວມກິດຈະກໍາ ແລະ ຜົນງານຂອງພວກເຮົາ
+                ລວມຮູບພາບກິດຈະກໍາ ແລະ ຜົນງານຂອງພວກເຮົາ
               </p>
             </div>
 
@@ -51,6 +67,25 @@ export default function GalleryPage() {
                   />
                 </div>
               ))}
+            </div>
+
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-2 text-xs text-gray-700">
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full sm:w-auto min-w-[96px] px-3 py-1 text-xs"
+              >
+                ຍ້ອນກັບ
+              </Button>
+              <span className="px-3 py-1.5 rounded-full bg-white/80 shadow text-xs">
+                ໜ້າ 1
+              </span>
+              <Button
+                size="sm"
+                className="w-full sm:w-auto min-w-[96px] px-3 py-1 text-xs"
+              >
+                ໜ້າຕໍ່ໄປ
+              </Button>
             </div>
           </div>
         </section>

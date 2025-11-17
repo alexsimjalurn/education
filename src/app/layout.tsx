@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { ErrorBoundaryWrapper } from '@/components/errors/ErrorBoundaryWrapper';
+import { FloatingChatButton } from '@/components/ui/FloatingChatButton';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({
       </head>
       <body>
         <ErrorBoundaryWrapper>{children}</ErrorBoundaryWrapper>
+        <FloatingChatButton />
       </body>
     </html>
   );

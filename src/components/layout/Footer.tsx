@@ -153,8 +153,24 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-200 pt-8 mt-8 text-center text-gray-600 text-sm">
-          <p>Education-ການສຶກສາ. 2024</p>
+            <div className="border-t border-gray-200 pt-8 mt-8 text-center text-gray-600 text-sm">
+              <p className="flex items-center justify-center gap-3">
+                Education-ການສຶກສາ. 2024
+                <Link
+                  href="https://github.com/alexsimjalurn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center"
+                >
+                  <Image
+                    src="/images/github_icon.png"
+                    alt="GitHub Logo"
+                    width={28}
+                    height={28}
+                    className="w-7 h-7"
+                  />
+                </Link>
+              </p>
         </div>
       </div>
     </footer>
