@@ -12,33 +12,21 @@ const nextConfig = {
   // Compression
   compress: true,
 
-  // Security headers temporarily disabled to fix connection reset issues
-  // Will re-enable after confirming site loads properly
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/:path*',
-  //       headers: [
-  //         {
-  //           key: 'X-DNS-Prefetch-Control',
-  //           value: 'on',
-  //         },
-  //         {
-  //           key: 'X-Frame-Options',
-  //           value: 'SAMEORIGIN',
-  //         },
-  //         {
-  //           key: 'X-Content-Type-Options',
-  //           value: 'nosniff',
-  //         },
-  //         {
-  //           key: 'Referrer-Policy',
-  //           value: 'origin-when-cross-origin',
-  //         },
-  //       ],
-  //     },
-  //   ];
-  // },
+  // Headers to ensure static files are served correctly
+  async headers() {
+    return [
+      {
+        // Allow static files to be served without authentication
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
 
   // Bundle analyzer (optional, enable when needed)
   // webpack: (config, { isServer }) => {
