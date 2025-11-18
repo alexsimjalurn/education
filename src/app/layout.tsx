@@ -7,10 +7,11 @@ import '../styles/globals.css';
 
 const notoSansLao = Noto_Sans_Lao({
   subsets: ['lao'],
-  weight: ['400', '500', '600', '700'], // Reduced from 9 weights to 4 essential weights for faster loading
+  weight: ['400', '600'], // Only essential weights for fastest loading
   variable: '--font-noto-sans-lao',
   display: 'swap',
   preload: true,
+  fallback: ['system-ui', 'arial'], // Fallback fonts for instant display
 });
 
 export const metadata: Metadata = {

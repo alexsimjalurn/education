@@ -41,9 +41,8 @@ const teamMembers = [
   },
 ];
 
-// Temporarily disabled static generation to fix connection issues
-// export const dynamic = 'force-static';
-// export const revalidate = 3600;
+export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export default function AboutPage() {
   return (

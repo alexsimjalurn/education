@@ -171,11 +171,10 @@ const mentorTracks = [
  * Home Page
  *
  * Main landing page with hero section, features, courses, and more.
- * Using auto rendering for better compatibility with Vercel.
+ * Static generation enabled for fast loading.
  */
-// Temporarily using 'auto' instead of 'force-static' to fix connection issues
-// export const dynamic = 'force-static';
-// export const revalidate = 3600;
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
 
 export default function HomePage() {
   return (

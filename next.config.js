@@ -3,10 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  // Image optimization - disabled to fix 401 errors on Vercel
-  // Will re-enable after confirming images load properly
+  // Image optimization - re-enabled with proper configuration
   images: {
-    unoptimized: true, // Disable Next.js image optimization to fix 401 errors
+    formats: ['image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    minimumCacheTTL: 60,
+    unoptimized: false,
   },
 
   // Compression
