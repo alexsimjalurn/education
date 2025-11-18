@@ -21,8 +21,9 @@ const galleryItems = [
   '/images/gallery/photo-12.jpg',
 ];
 
-export const dynamic = 'force-static';
-export const revalidate = 3600;
+// Temporarily disabled static generation to fix connection issues
+// export const dynamic = 'force-static';
+// export const revalidate = 3600;
 
 export default function GalleryPage() {
   return (
