@@ -32,7 +32,7 @@ class ApiClient {
       headers: {
         'Content-Type': 'application/json',
       },
-      timeout: 30000, // 30 seconds
+      timeout: 10000, // 10 seconds - optimized for Vercel edge functions
     });
 
     this.setupInterceptors();

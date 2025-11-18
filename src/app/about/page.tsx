@@ -41,6 +41,9 @@ const teamMembers = [
   },
 ];
 
+export const dynamic = 'force-static';
+export const revalidate = 3600;
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">

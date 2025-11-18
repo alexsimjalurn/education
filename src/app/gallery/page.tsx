@@ -21,6 +21,9 @@ const galleryItems = [
   '/images/gallery/photo-12.jpg',
 ];
 
+export const dynamic = 'force-static';
+export const revalidate = 3600;
+
 export default function GalleryPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">

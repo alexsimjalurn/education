@@ -171,7 +171,11 @@ const mentorTracks = [
  * Home Page
  *
  * Main landing page with hero section, features, courses, and more.
+ * Static generation enabled for instant loading.
  */
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
+
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
