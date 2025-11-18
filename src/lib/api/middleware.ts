@@ -106,11 +106,16 @@ export const getUserId = (req: NextApiRequest): string | null => {
 
 /**
  * Require authentication
+ * 
+ * TODO: Temporarily disabled for deployment - will implement login system later
+ * Currently returns default userId to allow access without authentication
  */
 export const requireAuth = (req: NextApiRequest): string => {
   const userId = getUserId(req);
   if (!userId) {
-    throw new ApiError('Authentication required', 401);
+    // TODO: Re-enable authentication check after implementing login system
+    // throw new ApiError('Authentication required', 401);
+    return 'default-user-id'; // Temporary: allow access without auth
   }
   return userId;
 };
