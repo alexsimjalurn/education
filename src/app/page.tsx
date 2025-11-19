@@ -161,6 +161,8 @@ export default function HomePage() {
           {/* Background Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Background Image - ใช้ Next.js Image แทน CSS background */}
+          {/* Fallback CSS background ถ้า image โหลดไม่ได้ */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-60" />
           <div className="absolute inset-0 opacity-60">
             <Image
               src="/images/BG.webp"
@@ -170,6 +172,10 @@ export default function HomePage() {
               priority={false}
               quality={75}
               sizes="100vw"
+              onError={(e) => {
+                // Hide image on error, fallback to CSS gradient
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
           {heroBackgroundShapes.map(shape => (
