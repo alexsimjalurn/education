@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
-import { Button } from '@/components/ui/Button';
 import { BackgroundImage } from '@/components/ui/BackgroundImage';
+import { Button } from '@/components/ui/Button';
 
 const heroBackgroundShapes = [
   {
