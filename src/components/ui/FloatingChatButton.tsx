@@ -24,12 +24,13 @@ export const FloatingChatButton: React.FC = () => {
       >
         <span className="absolute -top-3 -left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md">
           <Image
-            src="/images/chatbot.png"
+            src="/images/chatbot.webp"
             alt="Chatbot icon"
             width={32}
             height={32}
             className="w-8 h-8"
             priority
+            quality={80}
           />
         </span>
         ແຊັດບັອດ
