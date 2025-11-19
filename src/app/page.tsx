@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { Button } from '@/components/ui/Button';
+import { BackgroundImage } from '@/components/ui/BackgroundImage';
 
 const heroBackgroundShapes = [
   {
@@ -160,24 +161,8 @@ export default function HomePage() {
         <section className="relative bg-white pt-20 pb-0 overflow-hidden">
           {/* Background Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Background Image - ใช้ Next.js Image แทน CSS background */}
-          {/* Fallback CSS background ถ้า image โหลดไม่ได้ */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-60" />
-          <div className="absolute inset-0 opacity-60">
-            <Image
-              src="/images/BG.webp"
-              alt=""
-              fill
-              className="object-cover"
-              priority={false}
-              quality={75}
-              sizes="100vw"
-              onError={(e) => {
-                // Hide image on error, fallback to CSS gradient
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-          </div>
+          {/* Background Image - ใช้ Client Component สำหรับ error handling */}
+          <BackgroundImage />
           {heroBackgroundShapes.map(shape => (
             <div key={shape.id} className={shape.className} />
           ))}
