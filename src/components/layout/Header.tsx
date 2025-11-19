@@ -63,12 +63,13 @@ export const Header: React.FC = () => {
             aria-label="ໄປໜ້າຫຼັກ"
           >
             <Image
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Education Logo"
               width={320}
               height={120}
               className="h-16 md:h-20 w-auto object-contain transform origin-left scale-125 md:scale-150 -translate-y-1 md:-translate-y-2"
               priority
+              quality={85}
             />
           </button>
 

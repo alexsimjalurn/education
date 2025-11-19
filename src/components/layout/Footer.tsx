@@ -16,11 +16,13 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4 mb-4">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Education Logo"
                 width={720}
                 height={270}
                 className="h-32 w-auto object-contain"
+                loading="lazy"
+                quality={85}
               />
             </div>
           </div>
@@ -163,11 +165,13 @@ export const Footer: React.FC = () => {
                   className="inline-flex items-center"
                 >
                   <Image
-                    src="/images/github_icon.png"
+                    src="/images/github_icon.webp"
                     alt="GitHub Logo"
                     width={28}
                     height={28}
                     className="w-7 h-7"
+                    loading="lazy"
+                    quality={80}
                   />
                 </Link>
               </p>
